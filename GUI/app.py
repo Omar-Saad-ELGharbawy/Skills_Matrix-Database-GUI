@@ -1,34 +1,28 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
+# import numpy as np
 
-df = pd.DataFrame(
-   np.random.randn(10, 5),
-   columns=('col %d' % i for i in range(5)))
+from utils import display_dataframe, edit_dataframe, add_row
 
-st.table(df)
+df = pd.read_csv("..\Data\Skills.csv")
+# st.table(df)
+# st.dataframe(data)
 
-# import streamlit as st
-# import pandas as pd
+# Sidebar options
+options = ['Display Dataframe', 'Edit Dataframe', 'Add Row']
+selected_option = st.sidebar.selectbox("Select an option", options)
 
-# # Create an empty DataFrame
-# data = pd.DataFrame(columns=['Name', 'Age', 'Email'])
+# Main content based on selected option
+if selected_option == 'Display Dataframe':
+    display_dataframe(df)
+elif selected_option == 'Edit Dataframe':
+    edit_dataframe(df)
+    display_dataframe(df)
+elif selected_option == 'Add Row':
+    add_row(df)
+    display_dataframe(df)
 
-# # Add a button to add new rows to the table
-# if st.button('Add Row'):
-#     data.loc[len(data)] = ['New Name', 0, '']
-
-# # Display the DataFrame as a table
-# table = st.dataframe(data)
-
-# # Allow users to edit the table
-# for i in range(len(data)):
-#     name = table.text_input(label='Name', value=data.loc[i, 'Name'], key=f'Name_{i}')
-#     age = table.number_input(label='Age', value=data.loc[i, 'Age'], key=f'Age_{i}')
-#     email = table.text_input(label='Email', value=data.loc[i, 'Email'], key=f'Email_{i}')
-    
-#     # Update the DataFrame with the edited values
-#     data.loc[i] = [name, age, email]
-
-# # Display the updated DataFrame
-# st.write(data)
+# Save dataframe to CSV
+if st.button("Save Changes"):
+    df.to_csv("..\Data\Skills.csv", index=False)
+    st.success("Dataframe saved to Skills.csv")
