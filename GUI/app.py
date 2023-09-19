@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 # import numpy as np
 
-from utils import display_dataframe, edit_dataframe, add_row
+from utils import display_dataframe, edit_dataframe, add_row , save_changes
 
-df = pd.read_csv("..\Data\Skills.csv")
+data_Path = "..\Data\Skills.csv"
+df = pd.read_csv(data_Path)
 # st.table(df)
 # st.dataframe(data)
 
@@ -18,11 +19,11 @@ if selected_option == 'Display Dataframe':
 elif selected_option == 'Edit Dataframe':
     edit_dataframe(df)
     display_dataframe(df)
+    save_changes(df, data_Path)
 elif selected_option == 'Add Row':
     add_row(df)
     display_dataframe(df)
+    save_changes(df, data_Path)
 
-# Save dataframe to CSV
-if st.button("Save Changes"):
-    df.to_csv("..\Data\Skills.csv", index=False)
-    st.success("Dataframe saved to Skills.csv")
+
+

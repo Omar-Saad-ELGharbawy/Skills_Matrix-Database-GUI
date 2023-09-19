@@ -22,3 +22,11 @@ def add_row(df):
         new_row[column] = new_value
     # adding a row
     df.loc[len(df.index)] = new_row  
+
+
+def save_changes(df, data_Path) :
+    # Save dataframe to CSV
+    if st.button("Save Changes"):
+        df.to_csv(data_Path, index=False)
+        st.success("Dataframe saved to Skills.csv")
+
