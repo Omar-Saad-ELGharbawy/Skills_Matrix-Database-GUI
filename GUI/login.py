@@ -4,7 +4,7 @@ import streamlit as st
 def get_login_data():
     user_id = st.text_input("Username")
     password = st.text_input("Password", type="password")
-    return (username,password)
+    return (user_id,password)
 
 # DATABASE
 def check_login(username,password):
