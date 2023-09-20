@@ -8,7 +8,6 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
+print("Connected")
 
-mycursor.execute("CREATE TABLE Employees (ID VARCHAR(100),Name VARCHAR(300))")
-
-print("Created")
+# mycursor.execute("CREATE TABLE Employees (ID VARCHAR(100),Name VARCHAR(300))")
