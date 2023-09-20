@@ -11,9 +11,7 @@ valid_credentials = {
     'employee': 'employee123'
 }
 
-# Initialization of Session State attributes (time,uploaded_signal)
-if 'role' not in st.session_state:
-    st.session_state.role =""
+
 
 # Define the admin page
 def admin_page():

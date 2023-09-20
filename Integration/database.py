@@ -155,18 +155,47 @@ mydb = connect_to_database(host, username, password, database)
 
 
 # Define the data to be inserted
+# emp_data = [
+#     ('Engy', '100', 1, 'Integration', 'Technical Manager'),
+#     ('Ahmed Galal', '200', 2, 'Integration', 'Team leader')
+# ]
+
 emp_data = [
-    ('Engy', '100', 1, 'Integration', 'Technical Manager'),
-    ('Ahmed Galal', '200', 2, 'Integration', 'Team leader')
+    # ('Engy', '100', 1, 'Integration', 'Technical Manager'),
+    # ('Ahmed Galal', '200', 2, 'Integration', 'Team leader'),
+    ('Mohamed Tarek', '101', 101, 'Embedded Software Engineering', 'Team Leader '),
+    ('Ahmed Shindy', '301', 103, 'Embedded Software Engineering', 'Junior Engineer'),
+    ('Ahmed Shindy', '', 104, 'Embedded Software Engineering', 'Junior Engineer'),
+    ('Abdulrahman Assem', '102', 201, 'Embedded Software Engineering', 'Junior Engineer'),
+    ('Abdeen', '203', 302, 'Algo', 'Team Leader'),
+    ('Amr', '102', 2011, 'Algo', 'Junior')
 ]
 
+# skills_data = [
+#     ('Leadership', 1, 'Soft skills', 1),
+#     ('Python', 2, 'Technical skills', 2)
+# ]
 skills_data = [
-    ('Leadership', 1, 'Soft skills', 1),
-    ('Python', 2, 'Technical skills', 2)
+    # ('Leadership', 1, 'Soft skills', 1),
+    # ('Python', 2, 'Technical skills', 2),
+    # ('C_Programming', 3, 'Technical skills', 201),
+    ('ARM_Interfacing', 4, 'Technical Skills', 103),
+    ('Embedded Linux', 5, 'Technical Skills', 103),
+    ('Machine Learning and AI', 6, 'Technical Skills', 302),
+    ('Automotive Engineering', 7, 'Technical Skills', 101),
+    ('LeaderShip', 9, 'Soft Skills', 101),
+    ('Computer Vision', 10, 'Technical Skills', 2011),
+    ('Problem Solving', 11, 'Soft Skills', 2011),
+    ('ARM Interfacing', 12, 'Technical Skills', 201),
+    ('Problem Solving', 13, 'Soft Skills', 201),
+    ('Leadership', 14, 'Soft Skills', 2),
+    ('C\\C++ Software Development', 15, 'Technical Skills', 2),
+    ('Machine Learning', 16, 'Technical Skills', 2011),
+    ('AUTOSAR', 18, 'Technical Skills', 101)
 ]
 
 # Call the function to insert the data
 # insert_data_to_employees(mydb,emp_data)
-# insert_data_to_skills(mydb,skills_data)
+insert_data_to_skills(mydb,skills_data)
 
 print("Inserted")
