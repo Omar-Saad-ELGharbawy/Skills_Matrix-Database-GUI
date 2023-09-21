@@ -1,25 +1,40 @@
 import streamlit as st
-from final_gui import *
-from my_queries import *
 import pandas as pd
 
-def add_skill():
-    # Create a button and input field in Streamlit
-    if st.button('Add Skills'):
-        # Prompt the user to enter skills
-        new_skill = st.text_input('Enter a skill:')
-        
-        # Check if the input is not empty
-        if new_skill:
-            # # Add the skill to the list
-            # skills.append(new_skill)
-            
-            # Clear the input field
-            st.text_input('Enter a skill:', value='')
-            return new_skill
-    
+from my_queries import *
+from utils import *
 
-def present_SKILLS(userId):
+
+def edit_user(df):
+    st.subheader("Edit Dataframe")
+    row_index = st.selectbox("Row Index", df['ID'].values)
+
+    column = st.selectbox("Column", df.columns)
+    new_value = st.text_input("New Value")
+    # add button save
+    if st.button("Save Changes"):
+        update_emp(column,new_value,row_index)
+        st.experimental_rerun()
+
+def add_user(df):
+    st.subheader("Add Row")
+    new_row = {}
+    for column in df.columns:
+        new_value = st.text_input(column)
+        new_row[column] = new_value
+    if st.button("Add Row"):
+        result_tuple = (
+        new_row.get('ID', ''),
+        new_row.get('Name', ''),
+        new_row.get('Password', ''),
+        new_row.get('Department', ''),
+        new_row.get('Position', '')
+        )
+        insert_emp(result_tuple)
+        st.experimental_rerun()
+
+
+def present_skills(userId):
     skills = group_by(userId)
     columns = st.columns(len(skills))
     # loop over skills and get tuple and number of element
@@ -43,17 +58,8 @@ def present_SKILLS(userId):
                 insert_skill(skill_data)
                 # print("Inserted")
                 st.experimental_rerun()
-            
 
-
-# Define the employee page
-def employee_page(userId):
-
-    st.set_page_config(
-        page_title="Skiils Matrix",
-        page_icon="📈",
-        layout="wide"
-    )
+def view_user_page(userId):
     # display the user name in the page
     (Name,Department,Position) =  get_emp(userId)
     # presnet name department position in different columns
@@ -62,9 +68,7 @@ def employee_page(userId):
 
     # st.title("Skills Page")
     # st.markdown("<h1 style='text-align: center; color:#083D77;'>"+str(Name)+"</ h1>", unsafe_allow_html=True)
-
     st.header(f'Welcome {Name}')
-
     # insert line
     st.markdown("---")
 
@@ -80,7 +84,7 @@ def employee_page(userId):
     # write Ahmed Skills in the middle of screen
     st.markdown("<h3 style='text-align: center; color:#083D77;'>"+str(Name)+" Skills"+"</ h3>", unsafe_allow_html=True)
     
-    present_SKILLS(userId)
+    present_skills(userId)
 
     st.markdown("---")
 
@@ -100,5 +104,29 @@ def employee_page(userId):
         print("Inserted")
         st.experimental_rerun()
 
-        
-    st.button('Logout', on_click=logout)
+
+
+
+def view_employees_skills():
+    # Load employees data
+    employees_data = get_all_emp()
+
+    # Load skills data
+    # skills_data = get_all_skills()
+
+    # Set Streamlit app title
+    st.title('Employee Skills Visualization')
+
+    # Create a sidebar to select an employee
+    employee_ids = employees_data['ID'].tolist()
+
+    selected_employee = st.sidebar.selectbox('Select an employee:', employee_ids)
+
+    st.subheader(f'Skills for {selected_employee}')
+    # st.write(filtered_data[['Skill_Name', 'Skill_Type']])
+    present_skills(selected_employee)
+
+
+
+def logout():
+    st.session_state.role = ""

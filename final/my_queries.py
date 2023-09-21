@@ -1,4 +1,6 @@
 import mysql.connector
+import pandas as pd
+
 
 host = 'localhost'
 username = 'root'
@@ -7,19 +9,16 @@ database = 'skills_matrix'
 
 # Function to establish a database connection
 def connect_to_database(host, username, password, database):
-
     mydb = mysql.connector.connect(
         host=host,
         user=username,
         password=password,
         database=database
     )
-
     # if mydb.is_connected():
     #     print('Connected to the database')
     # else:
     #     print('Failed to connect to the database')
-    
     return mydb
 
 
@@ -30,7 +29,6 @@ def insert_employee_row(user_data):
     connection = connect_to_database(host, username, password, database)
 
     cursor = connection.cursor()
-
     try:
         query = """
         INSERT INTO employees (ID, Name, Password, Department, Position)
@@ -52,30 +50,20 @@ def insert_employee_row(user_data):
 def update_emp(column_to_update,new_value,specific_id):
     # Connect to the MySQL database
     connection = connect_to_database(host, username, password, database)
-
     cursor = connection.cursor()
-    # query = f"UPDATE {table_name} SET {column_to_update} = ? WHERE {id_column} = ?"
-
-    # column_to_update = 'Name'
-    # new_value = 'Omar'
-    # specific_id = 'OmarSaad01'
     query = f"UPDATE employees SET {column_to_update} =  %s WHERE employees.ID =  %s "
 
-#     # Execute the SQL query
+    # Execute the SQL query
     cursor.execute(query, (new_value, specific_id))
-    # cursor.execute(query,)
 
     # Commit the changes and close the connection
     connection.commit()
     connection.close()
 
 
-
-
 def insert_skills_row(user_data):
     # Connect to the MySQL database
     connection = connect_to_database(host, username, password, database)
-
     cursor = connection.cursor()
 
     query = """
@@ -89,6 +77,23 @@ def insert_skills_row(user_data):
     connection.close()
     # print("EMP Inserted")
 
+
+def insert_emp(user_data):
+    # Connect to the MySQL database
+    connection = connect_to_database(host, username, password, database)
+
+    cursor = connection.cursor()
+    
+    query = """
+    INSERT INTO employees (ID, Name, Password, Department, Position)
+    VALUES (%s, %s, %s, %s, %s)
+    """
+
+    cursor.execute(query,user_data)
+    connection.commit()
+
+    connection.close()
+    # print("Skill Inserted")
 
 def insert_skill(user_data):
     # Connect to the MySQL database
@@ -106,6 +111,7 @@ def insert_skill(user_data):
 
     connection.close()
     # print("Skill Inserted")
+
 
 
 def get_emp(user_id):
@@ -176,21 +182,32 @@ def group_by(user_id):
     return result
 
 
-    
-def perforom_Query(query):
-        # Connect to the MySQL database
+def get_all_emp():
+    # Connect to the MySQL database
     connection = connect_to_database(host, username, password, database)
-
     cursor = connection.cursor()
 
-    cursor.execute(query)
-    connection.commit()
+    employees_data = pd.read_sql('SELECT * FROM employees', connection)
 
+    # Close the cursor and connection
+    cursor.close()
     connection.close()
-    print("Done")
 
+    return employees_data
 
-    
+def get_all_skills():
+    # Connect to the MySQL database
+    connection = connect_to_database(host, username, password, database)
+    cursor = connection.cursor()
+
+    skills_data = pd.read_sql('SELECT * FROM skills', connection)
+
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
+
+    return skills_data
+
 
 
 
@@ -198,7 +215,7 @@ def perforom_Query(query):
 # print(result)
 
 # print("Inser emp row")
-# emp_data =  ('OmarSaad01', 'Omar Saad', "omar48", 'Embedded Software Engineering', 'Junior')
+# emp_data =  ('OmarSaad087', 'Omar Saad', "omar48", 'Embedded Software Engineering', 'Junior')
 # insert_employee_row(emp_data)
 # print("Inserted")
 
@@ -216,7 +233,7 @@ def perforom_Query(query):
 
 # query = "SELECT * FROM skills_matrix.employees;"
 # perforom_Query(query)
-userId = "Ahmed Galal01"
+# userId = "Ahmed Galal01"
 # (Name,Department,Position) =  get_emp(userId)
 # # Output the values
 # print("Column 1:", Name)

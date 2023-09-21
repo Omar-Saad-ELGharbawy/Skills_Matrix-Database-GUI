@@ -1,9 +1,10 @@
+import streamlit as st
+import mysql.connector
+
 from my_queries import *
 
-from emp_Page import *
-
-import streamlit as st
-# import mysql.connector
+from pages_handler import *
+from utils import *
 
 host = 'localhost'
 username = 'root'
@@ -42,17 +43,6 @@ def validate_user(user_id, password):
         return -1
     
 
-# Define the admin page
-def admin_page():
-    st.title('Admin Page')
-    # Add functionality for the admin page here
-    st.button('Logout', on_click=logout)
-    
-
-def logout():
-    st.session_state.role = ""
-
-
 # Define the login page
 def login_page():
     st.title('Login Page')
@@ -61,7 +51,6 @@ def login_page():
     st.session_state.user_pass = UserPass
 
     if st.button('Login'):
-        
         if validate_user(userId, UserPass):
             # Store the user's role in a session variable
             position = get_position(userId)
@@ -72,6 +61,7 @@ def login_page():
 
 
 def main():
+    
     # Initialization of Session State attributes (time,uploaded_signal)
     if 'role' not in st.session_state:
         st.session_state.role =""
@@ -80,19 +70,24 @@ def main():
     if 'user_pass' not in st.session_state:
         st.session_state.user_pass =""
 
-    userId=  st.session_state.user_id 
-    # UserPass= st.session_state.user_pass 
+    st.set_page_config(
+    page_title="Skiils Matrix",
+    page_icon="📈",
+    layout="wide"
+    )
+
+    userId=st.session_state.user_id 
+
+    # admin_ID = "Ahmed Galal01"
+
+    # admin_page(admin_ID)
 
     if st.session_state.role == '':
         login_page()
     elif st.session_state.role == 'admin':
-        admin_page()
+        admin_page(userId)
     else:
         employee_page(userId)
-
-    # Set a header using st.header()
-    
-    
 
 if __name__ == "__main__":
     main()
