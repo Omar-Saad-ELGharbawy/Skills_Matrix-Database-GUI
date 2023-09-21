@@ -99,4 +99,6 @@ def employee_page(userId):
         insert_skill(skill_data)
         print("Inserted")
         st.experimental_rerun()
-    # st.button('Logout', on_click=logout)
+
+        
+    st.button('Logout', on_click=logout)

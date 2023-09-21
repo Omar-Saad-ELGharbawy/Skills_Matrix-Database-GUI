@@ -33,6 +33,7 @@ def validate_user(user_id, password):
         query = "SELECT COUNT(*) FROM employees WHERE ID = %s AND Password = %s"
         cursor.execute(query, (user_id, password))
         result = cursor.fetchone()[0]
+        print(result)
 
         connection.close()
         return result
@@ -48,10 +49,8 @@ def admin_page():
     st.button('Logout', on_click=logout)
     
 
-
 def logout():
     st.session_state.role = ""
-
 
 
 # Define the login page
@@ -65,7 +64,9 @@ def login_page():
         
         if validate_user(userId, UserPass):
             # Store the user's role in a session variable
-            st.session_state.role = 'admin' if username == 'admin' else 'employee'
+            position = get_position(userId)
+            # print(position[0])
+            st.session_state.role = 'admin' if position == 'Team leader' else 'employee'
             st.experimental_rerun()
             # return(userId, UserPass)
 
@@ -79,18 +80,15 @@ def main():
     if 'user_pass' not in st.session_state:
         st.session_state.user_pass =""
 
-    userId ="Ahmed Galal01"
-
-    # userId =  st.session_state.user_id 
+    userId=  st.session_state.user_id 
     # UserPass= st.session_state.user_pass 
-    employee_page(userId)
 
-    # if st.session_state.role == '':
-    #     login_page()
-    # elif st.session_state.role == 'admin':
-    #     admin_page()
-    # else:
-    #     employee_page(userId)
+    if st.session_state.role == '':
+        login_page()
+    elif st.session_state.role == 'admin':
+        admin_page()
+    else:
+        employee_page(userId)
 
     # Set a header using st.header()
     

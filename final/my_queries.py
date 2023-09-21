@@ -135,6 +135,28 @@ def get_emp(user_id):
 
     return (Name,Department,Position) 
 
+def get_position(user_id):
+
+    # Connect to the MySQL database
+    connection = connect_to_database(host, username, password, database)
+    cursor = connection.cursor()
+
+    # Your query goes here
+    query = "SELECT employees.Position  FROM employees WHERE employees.ID =  %s"
+
+    # Execute the query
+    cursor.execute(query,(user_id,))
+
+    # Fetch the result
+    result = cursor.fetchone()
+    position = result[0]
+
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
+
+    return position
+
 def group_by(user_id):
 
     # Connect to the MySQL database
@@ -166,6 +188,9 @@ def perforom_Query(query):
 
     connection.close()
     print("Done")
+
+
+    
 
 
 
