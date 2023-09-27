@@ -55,7 +55,7 @@ def login_page():
             # Store the user's role in a session variable
             position = get_position(userId)
             # print(position[0])
-            st.session_state.role = 'admin' if position == 'Admin' else 'employee'
+            st.session_state.role = 'admin' if position == 'Team leader' else 'employee'
             st.experimental_rerun()
             # return(userId, UserPass)
 

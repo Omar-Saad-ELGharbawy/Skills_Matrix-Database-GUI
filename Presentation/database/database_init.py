@@ -11,7 +11,7 @@ import mysql.connector
 host = 'localhost'
 username = 'root'
 password = '6@Monamo'
-database = 'skills_matrix_data'
+database = 'skills_matrix'
 
 def check_database_exists(host, username, password, database):
     try:
@@ -155,7 +155,11 @@ def execute_sql():
     # mydb = connect_to_database(host, username, password, database)
     # print("Connected")
 
-
+    # Create the tables
+    create_employees_table()
+    print("Employees Created")
+    create_skills_table()
+    print("Skills Created")
     
 
 
@@ -199,15 +203,7 @@ skills_data = [
 
 # # # Call the function to insert the data
 
-
-# print("Inserted")
-
-# Create the tables
-# execute_sql()
-create_employees_table()
-print("Employees Created")
-# create_skills_table()
-print("Skills Created")
-
 # insert_data_to_employees(emp_data)
 # insert_data_to_skills(skills_data)
+# print("Inserted")
+

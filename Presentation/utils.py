@@ -64,7 +64,7 @@ def view_user_page(userId):
     (Name,Department,Position) =  get_emp(userId)
     # presnet name department position in different columns
     # make title and header in middle of screen
-    # st.markdown("<h1 style='text-align: center; color:#083D77;'>"+"Skills Page"+"</ h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color:#083D77;'>"+"Skills Page"+"</ h1>", unsafe_allow_html=True)
 
     # st.title("Skills Page")
     # st.markdown("<h1 style='text-align: center; color:#083D77;'>"+str(Name)+"</ h1>", unsafe_allow_html=True)
@@ -82,7 +82,7 @@ def view_user_page(userId):
     st.markdown("---")
 
     # write Ahmed Skills in the middle of screen
-    # st.markdown("<h3 style='text-align: center; color:#083D77;'>"+str(Name)+" Skills"+"</ h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color:#083D77;'>"+str(Name)+" Skills"+"</ h3>", unsafe_allow_html=True)
     
     present_skills(userId)
 
