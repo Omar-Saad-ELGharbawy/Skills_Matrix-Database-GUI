@@ -46,8 +46,13 @@ Database and Website Gui for Company Users Skills Visualization and editing in u
 
 - The frontend contains 3 pages:
     - **Login Page** - The login page is the first page that the user sees when he enters the website. The user must enter his username and password in order to enter the website.
+ ![Login Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/86b24d06-5d7f-42e4-849a-a64f076c29bd)
+
     - **Skills Page** - The skills page is the main page of the website. The user can view his skills and edit them.
+![User Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/6b3810ba-9ecb-4d90-96e3-deaa1ff8de01)
+
     - **Admin Page** - The admin page is a page that only the admin can enter. The admin can view and edit all the employees data.
+![Admin Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/ab37886e-30d7-44fd-9094-a9e04f36825b)
 
 ```
 Skills Matrix WebApp
