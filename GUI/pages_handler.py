@@ -1,7 +1,7 @@
 import streamlit as st
 
 from utils import *
-from my_queries import *
+from Presentation.database_queries import *
 # from all_users import *
 
 #############################################################################
