@@ -37,7 +37,7 @@ Database and Website Gui for Company Users Skills Visualization and editing in u
 
 ![Employee table](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/00cf1fcb-dc8e-4466-9edd-96ea725cbcfd)
 
-####Skills Table
+#### Skills Table
 
 ![Skills Table](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/01b9fa8c-1f87-4bbc-95ad-7e2d9314e975)
 
