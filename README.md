@@ -93,8 +93,27 @@ README.md
 
 ## User Guide
 - The user must enter his username and password in order to enter the website.
-- The user can view his skills and edit them.
+![Login Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/861eabe5-5933-4083-852f-07c4c6cbf73d)
+
+- The user can view his skills and edit them by adding new Skill in selected category or by adding new Category of Skills.
+  ![User Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/50ffc378-7797-4f2c-9784-2476780c5b4b)
+
 - The admin can view and edit all the employees data.
+    - He Can view and Edit His Own Page
+![Admin Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/5a7640c4-10eb-442a-9d59-0043efa71f1a)
+    - By Selecting All User From The Dashboard he can :
+        - Display All users Data
+          ![Screenshot (686)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/27e95e49-85ed-44e1-a082-1ff9db795f90)
+
+        - Add New User
+        - ![Screenshot (687)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/a088fcc7-5f7a-4aae-bf4a-2a5f866c3f69)
+
+        - Edit Specific User Data
+        - ![Screenshot (689)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/f7eaa819-0783-4437-b50e-6af8074d2d17)
+
+    - By Selecting User Skills From The Dashboard he can Display any Selected userid Skills Matrix and Edit on it  :
+    ![Screenshot (690)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/95f67417-4c9d-43b0-8ca0-d6add3d974c4)
+
 
 ## Technologies
 - Python 3.8
