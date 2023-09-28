@@ -2,7 +2,7 @@ import mysql.connector
 import streamlit as st
 import pandas as pd
 
-from database_connection import *
+from database.database_connection import *
 
 """ 
 database_queries File Documentation :
@@ -25,20 +25,6 @@ database_queries File Documentation :
         - get_all_emp()
         - get_all_skills()
 """
-
-# Function to establish a database connection
-def connect_to_database(host, username, password, database):
-    mydb = mysql.connector.connect(
-        host=host,
-        user=username,
-        password=password,
-        database=database
-    )
-    # if mydb.is_connected():
-    #     print('Connected to the database')
-    # else:
-    #     print('Failed to connect to the database')
-    return mydb
 
 # Function to check if the user_id and password are valid in the database
 def validate_user(user_id, userPassword):
