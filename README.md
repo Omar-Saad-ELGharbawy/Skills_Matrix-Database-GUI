@@ -106,12 +106,12 @@ README.md
           ![Screenshot (686)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/27e95e49-85ed-44e1-a082-1ff9db795f90)
 
         - Add New User
-        - ![Screenshot (687)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/a088fcc7-5f7a-4aae-bf4a-2a5f866c3f69)
+          ![Screenshot (687)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/a088fcc7-5f7a-4aae-bf4a-2a5f866c3f69)
 
         - Edit Specific User Data
-        - ![Screenshot (689)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/f7eaa819-0783-4437-b50e-6af8074d2d17)
+          ![Screenshot (689)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/f7eaa819-0783-4437-b50e-6af8074d2d17)
 
-    - By Selecting User Skills From The Dashboard he can Display any Selected userid Skills Matrix and Edit on it  :
+    - By Selecting User Skills From The Dashboard he can Display any Selected user ID Skills Matrix and Edit on it  :
     ![Screenshot (690)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/95f67417-4c9d-43b0-8ca0-d6add3d974c4)
 
 
