@@ -1,5 +1,5 @@
 # Skills Matrix WebApp
-Database and Website Gui for Company Users Skills Visualization and editing in user friendly way.
+Database and Website Gui for Company Users Skills Visualization and Editing in user friendly way.
 ***
 ## Table of contents
 * [Introduction](#introduction)
@@ -7,6 +7,7 @@ Database and Website Gui for Company Users Skills Visualization and editing in u
 * [Developer Guide](#developer_guide)
 * [User Guide](#user_guide)
 * [Technologies](#technologies)
+* [Project_Presenation](#project_presenation)
 
 
 ## Introduction
@@ -79,7 +80,7 @@ README.md
 - **Pandas** library
 
 ### DataBase Creation :
-- Using phpmyadmin as described in the Database Developer Guide File 
+- Using phpmyadmin as described in the [Database_Developer_Guide_File](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/blob/main/Files/Database%20Developer%20Guide.pdf) 
 - Or with using MySql Connector Librarry by running these to files : 
     - **database_init.py** - Create the database and the tables
     - **fill_tables.py** - Insert the data to the database tables
@@ -123,3 +124,5 @@ README.md
 - Streamlit
 - PyMySQL
 - Pandas
+
+## [Project_Presenation](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/blob/main/Files/Skills%20Matrix%20Presentation.pptx)
