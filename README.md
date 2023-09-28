@@ -1,5 +1,5 @@
 # Skills Matrix WebApp
-Database and Website Gui for Company Users Skills Visualization and editing in user friendly way.
+Database and Website Gui for Company Users Skills Visualization and Editing in user friendly way.
 ***
 ## Table of contents
 * [Introduction](#introduction)
