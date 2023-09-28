@@ -29,6 +29,14 @@ Database and Website Gui for Company Users Skills Visualization and editing in u
     - **Employees** - Contains all the users in the company.
     - **Skills** - Contains the Skills for each user in the company.
 
+ - ER Diagram
+![ER Diagram](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/7320f725-4599-42f4-9166-c63f5d0031d1)
+
+- Employees Table
+![Employee table](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/00cf1fcb-dc8e-4466-9edd-96ea725cbcfd)
+
+- Skills Table
+![Skills Table](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix/assets/84602951/01b9fa8c-1f87-4bbc-95ad-7e2d9314e975)
 
 ### Frontend
 - The frontend is based on **Python Streamlit**.
