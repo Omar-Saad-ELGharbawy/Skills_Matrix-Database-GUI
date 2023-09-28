@@ -1,4 +1,5 @@
 import mysql.connector
+import streamlit as st
 import pandas as pd
 
 """ 
@@ -6,9 +7,11 @@ database_queries File Documentation :
     This file contains all the queries that are used with the GUI to interact with the database.
     The queries are used to insert, update, and retrieve data from the database.
     The queries are used in the following files:
-        - GUI/employee.py
-        - GUI/skills.py
+        - GUI/mainPage.py
+        - GUI/pages_handler.py
+        - GUI/utils.py
     The queries are :
+        - validate_user(user_id, userPassword)
         - insert_employee_row(user_data)
         - update_emp(column_to_update,new_value,specific_id)
         - insert_skills_row(user_data)
@@ -39,6 +42,40 @@ def connect_to_database(host, username, password, database):
     # else:
     #     print('Failed to connect to the database')
     return mydb
+
+# Function to check if the user_id and password are valid in the database
+def validate_user(user_id, userPassword):
+    """
+    validate_user Desribtion :
+    This function checks if the user_id and password exist in the database.
+    If successful, it returns the number of rows that match the query (1 or 0)
+    If unsuccessful, it prints the error on console
+    Parameters
+    ----------
+    user_id : string
+        The id of the employee
+    userPassword : string
+        The password of the employee
+    Returns
+    -------
+    result : int
+        1 if login parameters is valid
+        0 if login parameters is invalid
+    """
+    try:
+        # Connect to the MySQL database
+        connection = connect_to_database(host, username, password, database)
+        cursor = connection.cursor()
+        # Query to check if the user_id and password exist in the database
+        query = "SELECT COUNT(*) FROM employees WHERE ID = %s AND Password = %s"
+        cursor.execute(query, (user_id, userPassword))
+        result = cursor.fetchone()[0]
+        print(result)
+        connection.close()
+        return result
+    except mysql.connector.Error as err:
+        st.error(f"MySQL Error: {err}")
+        return -1
 
 
 def insert_employee_row(employee_data):
