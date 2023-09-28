@@ -1,9 +1,5 @@
 import mysql.connector
-
-host = 'localhost'
-username = 'root'
-password = '6@Monamo'
-database = 'skills_matrix_database'
+from database_connection import *
 
 """ database_init File Documentation :
 This file contains functions to create the database if not created and the tables
@@ -11,7 +7,6 @@ It also contains a function to establish a connection to the database
 Functions :
     check_database_exists(host, username, password, database)
     create_database(host, username, password, database)
-    connect_to_database(host, username, password, database)
     create_employees_table()
     create_skills_table()
 """
@@ -55,27 +50,6 @@ def create_database(host, username, password, database):
     cursor.execute(sql)
     mydb.close()
     print("Created")
-
-# Function to establish a database connection
-def connect_to_database(host, username, password, database):
-    """
-    connect_to_database Desribtion:
-    This function establishes a connection to the database
-    If successful, it returns the connection object and closes it after use
-    If unsuccessful, it prints "Failed to connect to the database" on console
-    and raises an Exception
-    """
-    mydb = mysql.connector.connect(
-        host=host,
-        user=username,
-        password=password,
-        database=database
-    )
-    if mydb.is_connected():
-        print('Connected to the database')
-    else:
-        print('Failed to connect to the database')
-    return mydb
 
 # Function to create the "employees" table
 def create_employees_table():

@@ -1,31 +1,11 @@
-import mysql.connector
-
-host = 'localhost'
-username = 'root'
-password = '6@Monamo'
-database = 'skills_matrix_database'
+from database_connection import *
 
 """ fill_tables File Documentation :
 This file contains functions to insert data into the database
 Functions :
-    connect_to_database(host, username, password, database)
     insert_data_to_employees(data_list)
     insert_data_to_skills(data_list)
 """
-
-# Function to establish a database connection
-def connect_to_database(host, username, password, database):
-    mydb = mysql.connector.connect(
-        host=host,
-        user=username,
-        password=password,
-        database=database
-    )
-    if mydb.is_connected():
-        print('Connected to the database')
-    else:
-        print('Failed to connect to the database')
-    return mydb
 
 
 def insert_data_to_employees(data_list):

@@ -2,6 +2,8 @@ import mysql.connector
 import streamlit as st
 import pandas as pd
 
+from database_connection import *
+
 """ 
 database_queries File Documentation :
     This file contains all the queries that are used with the GUI to interact with the database.
@@ -23,11 +25,6 @@ database_queries File Documentation :
         - get_all_emp()
         - get_all_skills()
 """
-
-host = 'localhost'
-username = 'root'
-password = '6@Monamo'
-database = 'skills_matrix_database'
 
 # Function to establish a database connection
 def connect_to_database(host, username, password, database):
