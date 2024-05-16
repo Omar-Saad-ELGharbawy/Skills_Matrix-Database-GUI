@@ -32,7 +32,7 @@ Database and Website Gui for Company Users Skills Visualization and Editing in u
 
 #### ER Diagram
 
-![ER Diagram](Images\ER_Diagram.png)
+![ER Diagram](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/ER_Diagram.png)
 
 #### Employees Table
 
