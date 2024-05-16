@@ -34,7 +34,7 @@ Database and Website Gui for Company Users Skills Visualization and Editing in u
 
 ![ER Diagram](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/ER_Diagram.png)
 
-![ER](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/assets/84602951/f2b83c54-3de0-4b87-9d12-cb82fbc6e544)
+![ER](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/assets/84602951/aaf773bd-199d-4b3b-8106-ab07b26bc316)
 
 
 #### Employees Table
