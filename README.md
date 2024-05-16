@@ -50,10 +50,10 @@ Database and Website Gui for Company Users Skills Visualization and Editing in u
  ![Login Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Login_Page.png)
 
     - **Skills Page** - The skills page is the main page of the website. The user can view his skills and edit them.
-![User Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images\GUI\User_Page.png)
+![User Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/User_Page.png)
 
     - **Admin Page** - The admin page is a page that only the admin can enter. The admin can view and edit all the employees data.
-![Admin Page](Images\GUI\Admin_Page.png)
+![Admin Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Admin_Page.png)
 
 ```
 Skills Matrix WebApp
@@ -94,26 +94,26 @@ README.md
 
 ## User Guide
 - The user must enter his username and password in order to enter the website.
-![Login Page](Images\GUI\Login_Page.png)
+![Login Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Login_Page.png)
 
 - The user can view his skills and edit them by adding new Skill in selected category or by adding new Category of Skills.
-  ![User Page](Images\GUI\User_Page.png)
+  ![User Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/User_Page.png)
 
 - The admin can view and edit all the employees data.
     - He Can view and Edit His Own Page
-![Admin Page](Images\GUI\Admin_Page.png)
+![Admin Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Admin_Page.png)
     - By Selecting All User From The Dashboard he can :
         - Display All users Data
-          ![Screenshot (686)](Images\GUI\All_Users.png)
+          ![Screenshot (686)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/All_Users.png)
 
         - Add New User
-          ![Screenshot (687)](Images\GUI\Add_USer.png)
+          ![Screenshot (687)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Add_USer.png)
 
         - Edit Specific User Data
-          ![Screenshot (689)](Images\GUI\Edit_User.png)
+          ![Screenshot (689)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Edit_User.png)
 
     - By Selecting User Skills From The Dashboard he can Display any Selected user ID Skills Matrix and Edit on it  :
-    ![Screenshot (690)](Images\GUI\All_Skills.png)
+    ![Screenshot (690)](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/All_Skills.png)
 
 
 ## Technologies
