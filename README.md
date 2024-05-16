@@ -36,21 +36,21 @@ Database and Website Gui for Company Users Skills Visualization and Editing in u
 
 #### Employees Table
 
-![Employee table](Images\Employee_table.png)
+![Employee table](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/Employee_table.png)
 
 #### Skills Table
 
-![Skills Table](Images\Skills_Table.png)
+![Skills Table](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/Skills_Table.png)
 
 ### Frontend
 - The frontend is based on **Python Streamlit**.
 
 - The frontend contains 3 pages:
     - **Login Page** - The login page is the first page that the user sees when he enters the website. The user must enter his username and password in order to enter the website.
- ![Login Page](Images\GUI\Login_Page.png)
+ ![Login Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images/GUI/Login_Page.png)
 
     - **Skills Page** - The skills page is the main page of the website. The user can view his skills and edit them.
-![User Page](Images\GUI\User_Page.png)
+![User Page](https://github.com/Omar-Saad-ELGharbawy/Skills_Matrix-Database-GUI/blob/main/Images\GUI\User_Page.png)
 
     - **Admin Page** - The admin page is a page that only the admin can enter. The admin can view and edit all the employees data.
 ![Admin Page](Images\GUI\Admin_Page.png)
